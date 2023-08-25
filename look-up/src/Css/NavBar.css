@@ -1,0 +1,14 @@
+.NavBar {
+	background-color: #ff5100;
+	color: white;
+}
+
+.NavBar .StockPositionButton {
+	text-decoration: none;
+	color: white;
+}
+
+.NavBar .StockPositionButton:hover {
+	color: #ff5100;
+	background-color: white;
+}
