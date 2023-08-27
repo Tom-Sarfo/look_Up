@@ -1,3 +1,4 @@
+import "./Css/Footer.css";
 export default function Footer() {
-	return <div>Footer</div>;
+	return <div className="Footer">This is the Footer for LoopUp app</div>;
 }
