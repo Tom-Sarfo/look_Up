@@ -10,14 +10,15 @@
 	background-color: white;
 	padding: 0.7rem;
 	border-radius: 0.5rem;
+	color: black;
 }
 
-/* .SearchContainer {
+.SearchContainer {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-} */
+	/* align-items: center;
+	justify-content: center; */
+}
 
 .SearchIcon {
 	color: #ff5100;
@@ -28,4 +29,18 @@
 	width: 100%;
 	padding: 0.5rem;
 	align-items: center;
+}
+
+.SearchSuggestedList {
+	list-style-type: none;
+	max-height: 300px;
+	/* overflow-y: scroll; */
+}
+
+.SearchSuggestion {
+	padding: 0.5rem;
+}
+
+ul li {
+	border-top: 1px solid #e0dfe1;
 }

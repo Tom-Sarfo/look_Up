@@ -15,6 +15,7 @@ export default function SearchInput({ search, setInput }) {
 				placeholder="Search Drug Name"
 				autoFocus
 				onChange={(e) => setInput(e.target.value)}
+				className="input"
 			/>
 		</div>
 	);

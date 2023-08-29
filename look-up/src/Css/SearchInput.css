@@ -8,6 +8,7 @@
 	border: none;
 	background-color: white;
 	font-size: large;
+	color: black;
 }
 
 .SearchInput input:focus {
