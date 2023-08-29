@@ -1,8 +1,16 @@
 import SearchIcon from "@mui/icons-material/Search";
 import SearchInput from "./SearchInput";
 import SearchSuggestion from "./SearchSuggestion";
+import { useState } from "react";
 
 export default function SearchContainer() {
+	const [searchInput, setSearchInput] = useState("");
+
+	const handleChange = (inputValue) => {
+		setSearchInput(inputValue);
+		// fetchData(inputValue);
+	};
+
 	return (
 		<div className="SearchContainer">
 			<section className="SearchWrapper">
@@ -14,25 +22,27 @@ export default function SearchContainer() {
 							}}
 						/>
 					</div>
-					<SearchInput />
+					<SearchInput searchInput={searchInput} setInput={handleChange} />
 				</div>
-				<ul className="SearchSuggestedList">
-					<li>
-						<SearchSuggestion />
-					</li>
-					<li>
-						<SearchSuggestion />
-					</li>
-					<li>
-						<SearchSuggestion />
-					</li>
-					<li>
-						<SearchSuggestion />
-					</li>
-					<li>
-						<SearchSuggestion />
-					</li>
-				</ul>
+				{searchInput !== "" && (
+					<ul className="SearchSuggestedList">
+						<li>
+							<SearchSuggestion />
+						</li>
+						<li>
+							<SearchSuggestion />
+						</li>
+						<li>
+							<SearchSuggestion />
+						</li>
+						<li>
+							<SearchSuggestion />
+						</li>
+						<li>
+							<SearchSuggestion />
+						</li>
+					</ul>
+				)}
 			</section>
 		</div>
 	);

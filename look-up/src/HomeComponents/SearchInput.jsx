@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form";
 import "../Css/SearchInput.css";
 
-export default function SearchInput({ search, setInput }) {
+export default function SearchInput({ searchInput, setInput }) {
 	const { register } = useForm({
 		defaultValues: {
-			searchField: search,
+			searchField: searchInput,
 		},
 	});
 	return (
