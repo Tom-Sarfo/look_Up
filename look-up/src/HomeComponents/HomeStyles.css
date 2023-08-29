@@ -34,7 +34,7 @@
 .SearchSuggestedList {
 	list-style-type: none;
 	max-height: 300px;
-	/* overflow-y: scroll; */
+	overflow-y: scroll;
 }
 
 .SearchSuggestion {
@@ -43,4 +43,5 @@
 
 ul li {
 	border-top: 1px solid #e0dfe1;
+	margin-right: 0.7rem;
 }

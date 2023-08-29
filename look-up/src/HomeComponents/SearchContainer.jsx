@@ -20,6 +20,18 @@ export default function SearchContainer() {
 					<li>
 						<SearchSuggestion />
 					</li>
+					<li>
+						<SearchSuggestion />
+					</li>
+					<li>
+						<SearchSuggestion />
+					</li>
+					<li>
+						<SearchSuggestion />
+					</li>
+					<li>
+						<SearchSuggestion />
+					</li>
 				</ul>
 			</section>
 		</div>
