@@ -1,3 +1,7 @@
 export default function SearchSuggestion() {
-	return <div>SearchSuggestion</div>;
+	return (
+		<div className="SearchSuggestion">
+			<p>Kefrox 10mg </p>
+		</div>
+	);
 }
