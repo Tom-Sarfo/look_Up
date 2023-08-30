@@ -5,11 +5,17 @@ import { useState } from "react";
 
 export default function SearchContainer() {
 	const [searchInput, setSearchInput] = useState("");
+	const [toggleSuggestedList, setToggleSuggestedList] = useState(false);
 
 	const handleChange = (inputValue) => {
 		setSearchInput(inputValue);
+		setToggleSuggestedList(false);
 		// fetchData(inputValue);
 	};
+
+	function handleHide() {
+		setToggleSuggestedList(!toggleSuggestedList);
+	}
 
 	return (
 		<div className="SearchContainer">
@@ -24,8 +30,8 @@ export default function SearchContainer() {
 					</div>
 					<SearchInput searchInput={searchInput} setInput={handleChange} />
 				</div>
-				{searchInput !== "" && (
-					<ul className="SearchSuggestedList">
+				{searchInput !== "" && toggleSuggestedList === false && (
+					<ul className="SearchSuggestedList" onClick={handleHide}>
 						<li>
 							<SearchSuggestion />
 						</li>
