@@ -1,0 +1,83 @@
+/* .StockPositionContainer {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	background-color: #dfdfdf;
+	height: 100vh;
+	width: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+
+	padding: 0.5rem;
+} */
+
+/* .drugList {
+	margin-top: 1rem;
+} */
+.drugItem {
+	width: 450px;
+	padding: 0.5rem;
+}
+
+/* .drugItem paper {
+	padding: 0.5rem;
+} */
+
+.drugName {
+	color: #ff5100;
+	font-weight: 700;
+}
+
+.DrugDetailTable {
+	border-collapse: collapse;
+}
+
+.DrugDetailTable tr:nth-of-type(3) {
+	border-top: 1px solid #dfdfdf;
+	color: rgb(139, 136, 136);
+}
+.DrugDetailTable tr:nth-of-type(2n) {
+	color: rgb(139, 136, 136);
+	border-top: 1px solid #dfdfdf;
+}
+
+.DrugDetailTable td {
+	padding: 0.5rem;
+}
+
+.chip {
+	margin-right: -30px;
+}
+
+.menu {
+	position: absolute;
+	z-index: 9;
+	background-color: #ff9a02;
+	border-radius: 0.2rem;
+	margin-left: -5rem;
+}
+
+.FilterBar {
+	width: 100%;
+	/* top: 0px; */
+	margin-top: 2.9rem;
+}
+
+@media (max-width: 500px) {
+	.drugItem {
+		max-width: 320px;
+		padding: 0.5rem;
+	}
+
+	.chip {
+		margin-right: 120px;
+	}
+
+	.RightAlignSmallScreen {
+		margin-right: 100px;
+	}
+
+	.drugList {
+		margin-right: 0px;
+	}
+}
