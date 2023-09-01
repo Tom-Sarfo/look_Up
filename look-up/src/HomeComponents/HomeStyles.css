@@ -5,8 +5,7 @@
 }
 
 .SearchWrapper {
-	/* margin-top: 120px; */
-	width: 300px;
+	width: 450px;
 	background-color: white;
 	padding: 0.7rem;
 	border-radius: 0.5rem;
@@ -16,8 +15,7 @@
 .SearchContainer {
 	display: flex;
 	flex-direction: column;
-	/* align-items: center;
-	justify-content: center; */
+	justify-content: center;
 }
 
 .SearchIcon {
@@ -44,4 +42,10 @@
 ul li {
 	border-top: 1px solid #e0dfe1;
 	margin-right: 0.7rem;
+}
+
+@media (max-width: 500px) {
+	.SearchWrapper {
+		width: 320px;
+	}
 }
