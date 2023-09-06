@@ -21,13 +21,12 @@ export default function SearchContainer() {
 
 	async function fetchDrugData(inputValue) {
 		const { data } = await supabase.from("Drugs").select();
-		let searchFilter = data.filter((match) => {
-			const searchValue = inputValue.toLowerCase();
+		let searchFilter = data?.filter((match) => {
+			const searchValue = inputValue?.toLowerCase();
 			return match.DrugName.toLowerCase().includes(searchValue);
 		});
 		setDrugData(searchFilter);
 	}
-	console.log(drugData);
 
 	function handleHide() {
 		setToggleSuggestedList(!toggleSuggestedList);
@@ -48,21 +47,13 @@ export default function SearchContainer() {
 				</div>
 				{searchInput !== "" && toggleSuggestedList === false && (
 					<ul className="SearchSuggestedList" onClick={handleHide}>
-						<li>
-							<SearchSuggestion />
-						</li>
-						<li>
-							<SearchSuggestion />
-						</li>
-						<li>
-							<SearchSuggestion />
-						</li>
-						<li>
-							<SearchSuggestion />
-						</li>
-						<li>
-							<SearchSuggestion />
-						</li>
+						{drugData.map((drug) => {
+							return (
+								<li key={drug.DrugId}>
+									<SearchSuggestion drug={drug} />
+								</li>
+							);
+						})}
 					</ul>
 				)}
 			</section>

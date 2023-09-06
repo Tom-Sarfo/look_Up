@@ -1,7 +1,7 @@
-export default function SearchSuggestion() {
+export default function SearchSuggestion({ drug }) {
 	return (
 		<div className="SearchSuggestion">
-			<p>Kefrox 10mg </p>
+			<p>{drug.DrugName}</p>
 		</div>
 	);
 }
