@@ -12,16 +12,20 @@ export default function SearchContainer() {
 	const handleChange = (inputValue) => {
 		setSearchInput(inputValue);
 		setToggleSuggestedList(false);
-		// fetchData(inputValue);
+		fetchDrugData(inputValue);
 	};
 
 	useEffect(() => {
 		fetchDrugData();
 	}, []);
 
-	async function fetchDrugData() {
+	async function fetchDrugData(inputValue) {
 		const { data } = await supabase.from("Drugs").select();
-		setDrugData(data);
+		let searchFilter = data.filter((match) => {
+			const searchValue = inputValue.toLowerCase();
+			return match.DrugName.toLowerCase().includes(searchValue);
+		});
+		setDrugData(searchFilter);
 	}
 	console.log(drugData);
 
