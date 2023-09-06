@@ -1,17 +1,29 @@
 import SearchIcon from "@mui/icons-material/Search";
 import SearchInput from "./SearchInput";
 import SearchSuggestion from "./SearchSuggestion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import supabase from "../DbConnection";
 
 export default function SearchContainer() {
 	const [searchInput, setSearchInput] = useState("");
 	const [toggleSuggestedList, setToggleSuggestedList] = useState(false);
+	const [drugData, setDrugData] = useState([]);
 
 	const handleChange = (inputValue) => {
 		setSearchInput(inputValue);
 		setToggleSuggestedList(false);
 		// fetchData(inputValue);
 	};
+
+	useEffect(() => {
+		fetchDrugData();
+	}, []);
+
+	async function fetchDrugData() {
+		const { data } = await supabase.from("Drugs").select();
+		setDrugData(data);
+	}
+	console.log(drugData);
 
 	function handleHide() {
 		setToggleSuggestedList(!toggleSuggestedList);
