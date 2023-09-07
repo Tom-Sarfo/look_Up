@@ -1,0 +1,55 @@
+.drugItem {
+	width: 450px;
+	padding: 0.5rem;
+}
+
+.drugName {
+	color: #ff5100;
+	font-weight: 700;
+}
+
+.DrugDetailTable {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.DrugDetailTable tr:nth-of-type(3) {
+	border-top: 1px solid #dfdfdf;
+	color: rgb(139, 136, 136);
+}
+.DrugDetailTable tr:nth-of-type(2n) {
+	color: rgb(139, 136, 136);
+	border-top: 1px solid #dfdfdf;
+}
+
+.DrugDetailTable td {
+	padding: 0.5rem;
+}
+
+.chip {
+	margin-right: -30px;
+}
+
+.menu {
+	position: absolute;
+	z-index: 9;
+	background-color: #ff9a02;
+	border-radius: 0.2rem;
+	margin-left: -5rem;
+}
+
+.FilterBar {
+	width: 100%;
+	margin-top: 2.9rem;
+}
+
+@media (max-width: 500px) {
+	.drugItem {
+		max-width: 320px;
+		padding: 0.5rem;
+	}
+
+	.drugList {
+		margin-right: 0px;
+	}
+}
