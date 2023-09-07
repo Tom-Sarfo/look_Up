@@ -1,17 +1,32 @@
 import SearchIcon from "@mui/icons-material/Search";
 import SearchInput from "./SearchInput";
 import SearchSuggestion from "./SearchSuggestion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import supabase from "../DbConnection";
 
 export default function SearchContainer() {
 	const [searchInput, setSearchInput] = useState("");
 	const [toggleSuggestedList, setToggleSuggestedList] = useState(false);
+	const [drugData, setDrugData] = useState([]);
 
 	const handleChange = (inputValue) => {
 		setSearchInput(inputValue);
 		setToggleSuggestedList(false);
-		// fetchData(inputValue);
+		fetchDrugData(inputValue);
 	};
+
+	useEffect(() => {
+		fetchDrugData();
+	}, []);
+
+	async function fetchDrugData(inputValue) {
+		const { data } = await supabase.from("Drugs").select();
+		let searchFilter = data?.filter((match) => {
+			const searchValue = inputValue?.toLowerCase();
+			return match.DrugName.toLowerCase().includes(searchValue);
+		});
+		setDrugData(searchFilter);
+	}
 
 	function handleHide() {
 		setToggleSuggestedList(!toggleSuggestedList);
@@ -32,21 +47,13 @@ export default function SearchContainer() {
 				</div>
 				{searchInput !== "" && toggleSuggestedList === false && (
 					<ul className="SearchSuggestedList" onClick={handleHide}>
-						<li>
-							<SearchSuggestion />
-						</li>
-						<li>
-							<SearchSuggestion />
-						</li>
-						<li>
-							<SearchSuggestion />
-						</li>
-						<li>
-							<SearchSuggestion />
-						</li>
-						<li>
-							<SearchSuggestion />
-						</li>
+						{drugData.map((drug) => {
+							return (
+								<li key={drug.DrugId}>
+									<SearchSuggestion drug={drug} />
+								</li>
+							);
+						})}
 					</ul>
 				)}
 			</section>
