@@ -16,7 +16,6 @@ export default function Home() {
 			}}
 		>
 			<div className="Homes">
-				{/* <Link to="/search">Can you see the Home Component here</Link> */}
 				<SearchContainer
 					searchInput={searchInput}
 					setSearchInput={setSearchInput}
@@ -25,7 +24,6 @@ export default function Home() {
 				/>
 				<br />
 				<br />
-				{/* {searchInput === "" && <DrugDetailCard />} */}
 				<section>
 					<Outlet />
 				</section>
