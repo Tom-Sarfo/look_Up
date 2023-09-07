@@ -1,13 +1,20 @@
 import { Paper } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
+import { useState, useContext } from "react";
+import { DrugData } from "../DrugDataContext";
 import Details from "./Details";
 import BasicMenu from "./Menu";
 
-import { useState } from "react";
-
 export default function DrugListCard() {
 	const [expandDrugDetail, setExpandDrugDetail] = useState(false);
+
+	const { drugs, input } = useContext(DrugData);
+	const [searchInput, setSearchInput] = input;
+	const [drugData, setDrugData] = drugs;
+	// const [name] = useOutletContext();
+
+	console.log(drugData);
 
 	function handleDetailExpansion() {
 		setExpandDrugDetail(!expandDrugDetail);

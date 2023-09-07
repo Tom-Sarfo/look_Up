@@ -2,12 +2,16 @@ import SearchIcon from "@mui/icons-material/Search";
 import SearchInput from "./SearchInput";
 import SearchSuggestion from "./SearchSuggestion";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import supabase from "../DbConnection";
 
-export default function SearchContainer() {
-	const [searchInput, setSearchInput] = useState("");
+export default function SearchContainer({
+	searchInput,
+	setSearchInput,
+	drugData,
+	setDrugData,
+}) {
 	const [toggleSuggestedList, setToggleSuggestedList] = useState(false);
-	const [drugData, setDrugData] = useState([]);
 
 	const handleChange = (inputValue) => {
 		setSearchInput(inputValue);
@@ -50,7 +54,9 @@ export default function SearchContainer() {
 						{drugData.map((drug) => {
 							return (
 								<li key={drug.DrugId}>
-									<SearchSuggestion drug={drug} />
+									<Link to={`/drug_details/${drug.DrugId}`}>
+										<SearchSuggestion drug={drug} />
+									</Link>
 								</li>
 							);
 						})}
