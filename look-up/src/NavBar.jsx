@@ -34,11 +34,8 @@ export default function NavBar() {
 						component="div"
 						sx={{ flexGrow: 1, color: "white" }}
 					>
-						{/* <Link to="/" style={{ textDecoration: "none", color: "white" }}> */}
 						Look<b>Up</b>
-						{/* </Link> */}
 					</Typography>
-					{/* <Link to="/stock_position"> */}
 					<Button
 						color="inherit"
 						sx={{
@@ -52,7 +49,6 @@ export default function NavBar() {
 					>
 						Stock Position
 					</Button>
-					{/* </Link> */}
 				</Toolbar>
 			</AppBar>
 		</Box>
