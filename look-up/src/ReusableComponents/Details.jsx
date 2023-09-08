@@ -1,7 +1,7 @@
 import { Chip } from "@mui/material";
 import "./DrugDetailCard.css";
 import BoltIcon from "@mui/icons-material/Bolt";
-export default function DrugDetails({ ExpandDetail }) {
+export default function DrugDetails({ ExpandDetail, uniqDrug }) {
 	return (
 		<div>
 			{ExpandDetail === true && (
@@ -30,7 +30,9 @@ export default function DrugDetails({ ExpandDetail }) {
 								<b>Availability</b>
 							</td>
 							<td align="center">
-								<b className="RightAlignSmallScreen">1200pks</b>
+								<b className="RightAlignSmallScreen">
+									{uniqDrug[0]?.Availability}pks
+								</b>
 							</td>
 						</tr>
 						<tr>
@@ -38,17 +40,16 @@ export default function DrugDetails({ ExpandDetail }) {
 								<b>Old Price</b>
 							</td>
 							<td align="center">
-								<b className="RightAlignSmallScreen">¢19</b>
+								<b className="RightAlignSmallScreen">¢26.00</b>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								{/* {drug.Alternative !== "" ? (
-									<b>{drug.Alternative} (Alternative)</b>
+								{uniqDrug[0]?.Alternative !== null ? (
+									<b>{uniqDrug[0]?.Alternative} (Alternative)</b>
 								) : (
 									<b>No Alternative Available</b>
-								)} */}
-								<b>Amoksiklav 625mg tablet</b>
+								)}
 							</td>
 							<td align="center">
 								<b className="RightAlignSmallScreen">¢0.00</b>
