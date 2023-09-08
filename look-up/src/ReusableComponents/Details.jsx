@@ -40,19 +40,16 @@ export default function DrugDetails({ ExpandDetail, uniqDrug }) {
 								<b>Old Price</b>
 							</td>
 							<td align="center">
-								<b className="RightAlignSmallScreen">
-									¢{uniqDrug[0]?.OldPrice}
-								</b>
+								<b className="RightAlignSmallScreen">¢26.00</b>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								{/* {drug.Alternative !== "" ? (
-									<b>{drug.Alternative} (Alternative)</b>
+								{uniqDrug[0]?.Alternative !== null ? (
+									<b>{uniqDrug[0]?.Alternative} (Alternative)</b>
 								) : (
 									<b>No Alternative Available</b>
-								)} */}
-								<b>{uniqDrug[0]?.Alternative}</b>
+								)}
 							</td>
 							<td align="center">
 								<b className="RightAlignSmallScreen">¢0.00</b>

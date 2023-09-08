@@ -8,7 +8,9 @@ export default function WelcomeText() {
 	return (
 		<div>
 			{searchInput === "" && (
-				<div>Get Quick Information on your Stock Position!</div>
+				<div>
+					<h2>Get Quick Information from your Stock Position!</h2>
+				</div>
 			)}
 		</div>
 	);
